@@ -6,12 +6,16 @@
  class AddressBook
      attr_reader :entries
 
+     def wrath_of_god
+         @entries = []
+     end
 
-   def initialize
-     @entries = []
-   end
 
-   def remove_entry(name, phone, email)
+     def initialize
+         @entries = []
+     end
+
+     def remove_entry(name, phone, email)
        delete_entry = nil
 
        @entries.each do |entry|
@@ -21,7 +25,7 @@
        end
 
        @entries.delete(delete_entry)
-   end
+    end
 
 
    def add_entry(name, phone_number, email)

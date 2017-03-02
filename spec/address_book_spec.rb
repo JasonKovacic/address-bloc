@@ -11,6 +11,16 @@ RSpec.describe AddressBook do
        expect(entry.email).to eq expected_email
       end
 
+      context "#wrath_of_god" do
+          it "should delete all entries" do
+              book.add_entry("Michael Faraday", "010.210.5181", "michael.fraday@faraday.com")
+              book.add_entry("Michael Faraday", "010.210.5181", "michael.fraday@faraday.com")
+              book.add_entry("Michael Faraday", "010.210.5181", "michael.fraday@faraday.com")
+
+              book.nuke
+              expect(book.entries.size).to eq 0
+          end
+      end
 
 
       it "initializes entries as an array" do
